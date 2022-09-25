@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+{% block title %}
+Log In
+{% endblock %}
+{% block content %}
+<div class="container">
+  {% for message in get_flashed_messages() %}
+  <div class="alert-container" role="alert">
+    <div class="alert">{{ message }}</div>
+  </div>
+  {% endfor %}
+  
+  <div class="card-wrapper">
+    <div class="card">
+
+      <h1 class="center">Log In</h1>
+
+      <form name="login_form">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" class="field" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" class="field" required>
+
+        <p class="error error--hidden"></p>
+        <p class="info info--hidden">Click <a href="/user/accountdisabled/">Here</a> to enable account</p>
+
+        <input type="submit" value="Log In" class="btn">
+
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

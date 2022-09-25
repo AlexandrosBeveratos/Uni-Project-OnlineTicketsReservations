@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% block title %}
+Enable Account
+{% endblock %}
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert-container" role="alert">
+        <div class="alert">{{ message }}</div>
+    </div>
+    {% endfor %}
+    <div class="card-wrapper">
+        <div class="card">
+
+            <h1 class="center">Enable Your Account</h1>
+
+            <form name="enable_form" action="/user/enableaccount/" method="post">
+
+                <label for="enabling_code">Account Enabling Code</label>
+                <input type="text" name="enabling_code" class="field" required>
+
+                <label for="idnum">Passport Number</label>
+                <input type="text" name="idnum" class="field" required>
+
+                <p class="error error--hidden"></p>
+
+                <input type="submit" value="Enable" class="btn">
+
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

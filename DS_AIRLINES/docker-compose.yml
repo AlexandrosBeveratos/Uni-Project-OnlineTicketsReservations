@@ -1,0 +1,21 @@
+version: '3.8' # or '2.4'      # add
+services:                      # add
+  app:
+    build: .
+    command: python -u app.py  # (delete? duplicates Dockerfile CMD)
+    ports:
+      - "5000:5000"
+  db:
+    image: mongo:latest
+    hostname: dsairline_mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=ds_airline_db
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    volumes:
+      - ./init-db.js:/docker-entrypoint-initdb.d/init-db.js:ro
+      - dbdata:/data/db     
+    ports:
+      - 27017:27017
+volumes:                     
+  dbdata:                  

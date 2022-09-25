@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block title %}
+Add Flight
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card-wrapper">
+  
+        <div class="card">
+  
+          <h1 class="center">Add a Flight</h1>
+  
+          <form name="add_flight_form">
+  
+            <label for="datetime">Datetime of flight</label>
+            <input type="text" name="datetime" placeholder="'Enter date(yyyy-mm-dd hh:mm): ')" class="field" required>
+  
+            <label for="departure">Departure</label>
+            <input type="text" name="departure" placeholder="Enter the city flight starts" class="field" required>
+  
+            <label for="destination">Destination</label>
+            <input type="text" name="destination" placeholder="Enter the flight destination" class="field" required>
+  
+            <label for="cost">Cost</label>
+            <input type="text" name="cost" placeholder="Enter the cost of a ticket (more than 0)" class="field" required>
+  
+            <label for="flhours">Flight Hours</label>
+            <input type="text" name="flhours" placeholder="Enter the hours the flight takes" class="field" required>
+  
+            <p class="error error--hidden"></p>
+  
+            <input type="submit" value="Add Flight" class="btn">
+          
+          </form>
+          
+        </div>
+      
+      </div>
+  </div>
+{% endblock %}

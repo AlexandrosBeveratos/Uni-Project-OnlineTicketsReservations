@@ -1,0 +1,15 @@
+.container-flights{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.452)), url(../images/flightsbackground.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+#search-reserve{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}

@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block title %}
+Sign Up
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="card-wrapper">
+
+      <div class="card">
+
+        <h1 class="center">Create an Account</h1>
+
+        <form name="signup_form">
+
+          <label for="username">Username</label>
+          <input type="text" name="username" placeholder="Enter a unique username" class="field" required>
+
+          <label for="name">Full Name</label>
+          <input type="text" name="fullname" placeholder="Latin letters as in you passport" class="field" required>
+
+          <label for="email">Email</label>
+          <input type="email" name="email" class="field" required>
+
+          <label for="password">Password</label>
+          <input type="password" name="password" placeholder="Min 8 characters and at least 1 number" class="field" required>
+
+          <label for="idnum">Passport Number</label>
+          <input type="text" name="idnum" placeholder="Enter a valid Passport number" class="field" required>
+
+          <p class="error error--hidden"></p>
+
+          <input type="submit" value="Sign Up" class="btn">
+        
+        </form>
+        
+      </div>
+    
+    </div>
+</div>
+{% endblock %}

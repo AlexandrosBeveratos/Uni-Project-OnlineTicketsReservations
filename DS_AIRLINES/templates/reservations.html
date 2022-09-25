@@ -1,0 +1,90 @@
+{% extends 'base.html'%}
+{% block title %}
+Reservations
+{% endblock %}
+{% block content %}
+<div class="container-dash">
+  {% for message in get_flashed_messages() %}
+    <div class="alert-container" role="alert">
+        <div class="alert">{{ message }}</div>
+      </div>
+    {% endfor %}
+    
+    <div class="card-wrapper">
+
+        <div class="card">
+    
+          <h1 class="center">Search Reservation</h1>
+
+          <form name="search_reservation_form" action="/user/reservations/search/" method="post">
+  
+            <label for="resnumber">Reservation Number</label>
+            <input type="text" name="resnumber" placeholder="Enter the number of the reservation" class="field" required>
+  
+            <p class="error error--hidden"></p>
+  
+            <input type="submit" value="Search Reservation" class="btn">
+          
+          </form>
+        
+        </div>
+    
+        <div class="card">
+    
+          <h1 class="center">Cancel Reservation</h1>
+
+          <form name="cancel_reservation_form">
+  
+            <label for="resnumber">Reservation Number</label>
+            <input type="text" name="resnumber" placeholder="Enter the number of the reservation" class="field" required>
+  
+            <p class="error error--hidden"></p>
+  
+            <input type="submit" value="Cancel Reservation" class="btn">
+          
+          </form>
+        
+        </div>
+
+        
+    </div>
+
+    <div class="card-wrapper">
+
+      <div class="card results">
+
+        <h1 class="center">My Reservation</h1>
+        <table id="data" class="table">
+          <thead>
+            <tr>
+              <th>Reservation Number</th>
+              <th>Flight Number</th>
+              <th>Name</th>
+              <th>Passport Number</th>
+              <th>Cost</th>
+              <th>Destination</th>
+            </tr>
+          </thead>
+          <tbody>    
+              {% if not reservation == none %}
+              <tr>
+                <td>{{ reservation['resnumber'] }}</td>
+                <td>{{ reservation['flightnumber'] }}</td>
+                <td>{{ reservation['name'] }}</td>
+                <td>{{ reservation['idnum'] }}</td>
+                <td>{{ reservation['cost'] }}</td>
+                <td>{{ reservation['destination'] }}</td>
+              </tr>
+              {% else %}
+              <tr><td>NO RESERVATION FOUND</td></tr>
+              {% endif %}
+          </tbody>
+        </table>
+        
+
+      </div>
+
+    </div>
+
+</div>
+{% endblock %}

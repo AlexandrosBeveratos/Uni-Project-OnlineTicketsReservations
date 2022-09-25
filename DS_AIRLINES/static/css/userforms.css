@@ -1,0 +1,231 @@
+* {
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--black);
+    background: var(--grey-light);
+  }
+  
+  /* Typography */
+  .center {
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0.5em 0 1em;
+    font-size: 26px;
+    line-height: 1.2;
+    color: var(--almost-black);
+  }
+  
+  h2 {
+    margin: 0.5em 0 1em;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--grey-dark);
+  }
+  
+  p {
+    margin: 24px 0;
+  }
+  
+  /* Cards */
+  .card-wrapper {
+    margin: 0 auto;
+    padding: 90px 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .card {
+    color: white;
+    margin: 0 30px 60px;
+    padding: 20px 40px;
+    width: 460px;
+    box-shadow: 0 8px 26px -4px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    background-color:rgba(50, 139, 240, 0.747);
+  }
+
+  .results{
+    width: fit-content;
+    min-height: 50vh;
+  }
+
+  .table{
+    display: block;
+			max-height: 250px;
+			overflow-y: auto;
+			overflow-x: hidden;
+			border-collapse: collapse;
+			margin: 25px 0;
+			font-size: 20px;
+			min-width: 400px;
+			border-radius: 5px 5px 0 0;
+			background-color: white;
+			border-radius: 5px 5px 5px 5px;
+		}
+		.table::-webkit-scrollbar{
+			width: 1em;
+		}
+		.table::-webkit-scrollbar-track{
+			background-color: #565578;
+			border-radius: 5px;
+		}
+		.table::-webkit-scrollbar-thumb{
+			background-color: #2e2c5c;
+			border-radius: 100vw;
+		}
+		.table thead tr{
+			background-color: #313063;
+			text-align: left;
+			font-weight: bold;
+		}
+		.table tr{
+			border-bottom: 2px solid #dddddd;
+		}
+		.table th, .table td{
+			padding: 10px 12px;
+		}
+		.table td{
+			color: #2a2b33;
+		}
+		.table tbody tr:nth-of-type(even){
+			background-color: #a9a9ac;
+		}
+    .table-sortable th {
+      cursor: pointer;
+    }
+
+    .table-sortable .th-sort-asc::after {
+      content: "\25b4";
+    }
+    
+    .table-sortable .th-sort-desc::after {
+      content: "\25be";
+    }
+
+  @media only screen and (max-width: 520px) {
+    .card-wrapper {
+      padding: 30px 0 0;
+    }
+  }
+  
+  @media only screen and (max-width: 520px) {
+    .card {
+      margin: 0 0 30px;
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+  
+  /* Forms */
+  form {
+    transition: opacity .15s ease;
+  }
+  
+  form.loading {
+    pointer-events: none;
+    opacity: 0.75;
+  }
+  
+  label {
+    margin: 0 0 2px;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    color: var(--grey-medium);
+    display: block;
+  }
+  
+  .field {
+    margin: 0 0 24px;
+    padding: 11px 16px 9px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 26px;
+    color: black;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    display: block;
+    background-color: white;
+    transition: border-color .15s ease;
+  }
+  
+  .field:focus {
+    border-color: rgb(116, 116, 116);
+    outline: none;
+  }
+  
+  .error {
+    margin: 0;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: rgb(255, 73, 73);
+    font-style: bold;
+  }
+  
+  .error--hidden {
+    display: none;
+  }
+
+  .info {
+    margin: 0;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: rgb(213, 250, 128);
+    font-style: bold;
+  }
+  
+  .info--hidden {
+    display: none;
+  }
+  
+  /* Buttons */
+  .btn {
+    margin: 0 0 24px;
+    padding: 11px 30px 10px;
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    background:#00ccff;
+    transition: color .15s ease, background-color .15s ease;
+    box-shadow: 2px 2px rgb(63, 63, 63);
+  }
+  
+  .btn:hover {
+    background: #027396;
+    box-shadow: 1px 1px rgb(63, 63, 63);
+  }
+  
+  .btn--secondary {
+    color: var(--almost-black);
+    background: var(--secondary);
+  }
+  
+  .btn--secondary:hover {
+    background: var(--secondary-dark);
+  }
+  
+  input[type=submit] {
+    margin: 34px auto 24px;
+    display: block;
+  }

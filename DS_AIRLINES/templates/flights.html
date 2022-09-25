@@ -1,0 +1,102 @@
+{% extends 'base.html'%}
+{% block title %}
+Flights
+{% endblock %}
+{% block content %}
+<div class="container-flights">
+    {% for message in get_flashed_messages() %}
+    <div class="alert-container" role="alert">
+        <div class="alert">{{ message }}</div>
+      </div>
+    {% endfor %}
+    <div class="card-wrapper home-wrap">
+
+        <div id="search-reserve">
+            <div class="card">
+  
+                <h1 class="center">Search a Flight</h1>
+        
+                <form name="search_flight_form" action="/searchflight" method="post">
+        
+                  <label for="datetime">Datetime of flight(yyyy-mm-dd hh:mm)</label>
+                  <input type="text" name="datetime" placeholder="Enter datetime" class="field" required>
+        
+                  <label for="departure">Departure</label>
+                  <input type="text" name="departure" placeholder="Enter the city flight starts" class="field" required>
+        
+                  <label for="destination">Destination</label>
+                  <input type="text" name="destination" placeholder="Enter the flight destination" class="field" required>
+        
+                  <p class="error error--hidden"></p>
+        
+                  <input type="submit" value="Search Flight" class="btn">
+                
+                </form>
+    
+            </div>
+
+            <div class="card">
+  
+                <h1 class="center">Make Flight Reservation</h1>
+        
+                <form name="reserve_flight_form">
+        
+                  <label for="flightnumber">Flight Number</label>
+                  <input type="text" name="flightnumber" placeholder="Enter the flight number" class="field" required>
+        
+                  <label for="name">Full Name</label>
+                  <input type="text" name="name" placeholder="Enter your name" class="field" required>
+        
+                  <label for="idnum">Passport Number</label>
+                  <input type="text" name="idnum" placeholder="Enter the number of your passport" class="field" required>
+    
+                  <label for="credit">Credit Card</label>
+                  <input type="text" name="credit" placeholder="Enter your credit card number" class="field" required>
+        
+                  <p class="error error--hidden"></p>
+        
+                  <input type="submit" value="Reserve Flight" class="btn">
+                
+                </form>
+    
+            </div>
+        </div>
+
+        <div class="card results">
+
+            <h1 class="center">Flights Results</h1>
+            <table id="data" class="table">
+                <thead>
+                <tr>
+                    <th>Flight Number</th>
+                    <th>Departure</th>
+                    <th>Destination</th>
+                    <th>Datetime of Departure</th>
+                    <th>Cost</th>
+                    <th>Flight Hours</th>
+                    <th>Availability</th>
+                </tr>
+                </thead>
+                <tbody>    
+                    {% for flight in flights if not flight == none %}
+                    <tr>
+                        <td>{{ flight['flightnumber'] }}</td>
+                        <td>{{ flight['departure'] }}</td>
+                        <td>{{ flight['destination'] }}</td>
+                        <td>{{ flight['date'] }}</td>
+                        <td>{{ flight['cost'] }}</td>
+                        <td>{{ flight['flhours'] }}</td>
+                        <td>{{ flight['availability'] }}</td>
+                    </tr>
+                    {% else %}
+                    <tr><td>NO FLIGHTS FOUND</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Righteous&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+.container{
+  font-family: 'PT Sans', sans-serif;
+  overflow: hidden;
+}
+body{
+  font-family: sans-serif;
+  margin: 0;
+}
+
+/*Navbar settings*/
+nav{
+  background: #5d7fb4;
+  height: 80px;
+  width: 100%;
+  margin-left: 0px;
+}
+
+label.logo{
+  float: left;
+  color: yellow;
+  font-size: 34px;
+  line-height: 80px;
+  padding: 0 10px;
+  margin: 0;
+  font-style: italic;
+  font-family: fantasy;
+  text-shadow: 2px 2px #ff0000;
+}
+
+nav ol{
+  float: right;
+  margin-left: 5px;
+  height: 62px;
+  margin-bottom: 0px;
+}
+
+nav ul{
+  float: left;
+  margin-left: 5px;
+  height: 62px;
+  margin-bottom: 0px;
+}
+
+nav ul li, nav ol li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+  font-family: 'Righteous', cursive;
+}
+
+nav ul li a, nav ol li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 5px;
+  border-radius: 3px;
+}
+
+nav a:hover,.active{
+  background: #f1ba06;
+  transition: .4s;
+}
+
+.checkbtn{
+  font-size: 10px;
+  float: right;
+  line-height: 100px;
+  margin-right: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  label.logo{
+    font-size: 30px;
+    padding-left: 30px;
+  }
+  nav ul li a, nav ol li a{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 780px) {
+  .checkbtn{
+    display: block;
+  }
+  nav ul, nav ol{
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #3e5270;
+    top: 64px;
+    left: 100%;
+    text-align: center;
+    transition: all .4s;
+    z-index: 5;
+  }
+  nav ul li, nav ol li{
+    display: block;
+    margin: 20px 0;
+    line-height: 30px;
+
+  }
+  nav ul li a, nav ol li a{
+    font-size: 22px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: yellow;
+  }
+  #check:checked ~ ul{
+    left: 0;
+    position: absolute;
+  }
+}

@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% block title %}
+Add Flight
+{% endblock %}
+{% block content %}
+<div class="container">
+  {% for message in get_flashed_messages() %}
+    <div class="alert-container" role="alert">
+        <div class="alert">{{ message }}</div>
+      </div>
+    {% endfor %}
+    <div class="card-wrapper">
+  
+        <div class="card">
+  
+          <h1 class="center">Edit the ticket price of a Flight</h1>
+  
+          <form name="edit_flight_form">
+  
+            <label for="flightnumber">Flight Number</label>
+            <input type="text" name="flightnumber" placeholder="Enter the number of the flight" class="field" required>
+            <label for="cost">Cost</label>
+            <input type="text" name="cost" placeholder="Enter new price of a ticket (more than 0)" class="field" required>
+  
+            <p class="error error--hidden"></p>
+  
+            <input type="submit" value="Change Price" class="btn">
+          
+          </form>
+          
+        </div>
+
+        <div class="card">
+  
+          <h1 class="center">Delete a Flight</h1>
+  
+          <form name="delete_flight_form">
+  
+            <label for="flightnumber">Flight Number</label>
+            <input type="text" name="flightnumber" placeholder="Enter the number of the flight" class="field" required>
+  
+            <p class="error error--hidden"></p>
+  
+            <input type="submit" value="Delete Flight" class="btn">
+          
+          </form>
+          
+        </div>
+      
+      </div>
+  </div>
+{% endblock %}

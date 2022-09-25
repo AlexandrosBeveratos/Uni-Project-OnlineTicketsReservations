@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% block title %}
+User Management
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card-wrapper">
+
+        <div class="card">
+
+            <h1 class="center">Add Admin Role</h1>
+
+            <form name="add_admin_form">
+
+                <label for="email">Email</label>
+                <input type="text" name="email" placeholder="Enter the email of the user" class="field" required>
+
+                <p class="error error--hidden"></p>
+
+                <input type="submit" value="Make Admin" class="btn">
+
+            </form>
+
+        </div>
+
+        <div class="card">
+
+            <h1 class="center">Remove Admin Role</h1>
+
+            <form name="remove_admin_form">
+
+                <label for="email">Email</label>
+                <input type="text" name="email" placeholder="Enter the email of the user" class="field" required>
+
+                <p class="error error--hidden"></p>
+
+                <input type="submit" value="Remove Admin" class="btn">
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
